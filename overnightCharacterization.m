@@ -1,5 +1,8 @@
 d = load('overnight.dat');
 
+%Remove time offset 
+d(:,1) = d(:,1) - d(1,1);
+
 %sensors are interlaced
 T1 = d(1:2:end,:);
 T2 = d(2:2:end,:);
