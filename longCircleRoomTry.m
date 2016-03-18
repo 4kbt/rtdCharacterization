@@ -42,4 +42,9 @@ data = resampledResidual(10000:end,:);
 
 P = psd(data(:,1), data(:,2) - mean(data(:,2)));
 
+%Calibrates, using coefficient from the FirstCircleRoom code
+loglog(P(:,1), sqrt(P(:,2))*2e-6)
+xlabel('frequency (Hz)');
+ylabel('temperature difference power spectral amplitude (K/rtHz)');
+title('Week-long RTD run, with resampling to remove timing glitches');
 
